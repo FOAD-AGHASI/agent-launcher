@@ -1,0 +1,14 @@
+{
+  "description": "Batch MTO extraction from isometric BOMs (DWG/PDF/OCR) with a Claude review of the flagged rows",
+  "kind": "python",
+  "run": ["python", "-m", "iso_review", "--input", "{INPUT}"],
+  "env": [
+    {"name": "ANTHROPIC_API_KEY", "secret": true, "required": true, "description": "your Anthropic API key"}
+  ],
+  "args": [
+    {"name": "INPUT", "kind": "path", "description": "folder with the isometrics (PDF and/or DWG)"}
+  ],
+  "requires": [
+    {"name": "tesseract", "description": "OCR engine for scanned PDFs"}
+  ]
+}

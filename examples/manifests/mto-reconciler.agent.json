@@ -1,0 +1,16 @@
+{
+  "description": "Reconciles a piping MTO against isometric BOMs with a Claude agent",
+  "kind": "node",
+  "run": ["npm", "run", "reconcile", "--", "--mto", "{MTO}", "--iso", "{ISO}", "--out", "{OUT}"],
+  "env": [
+    {"name": "ANTHROPIC_API_KEY", "secret": true, "required": true, "description": "your Anthropic API key"}
+  ],
+  "args": [
+    {"name": "MTO", "kind": "path", "description": "MTO csv file"},
+    {"name": "ISO", "kind": "path", "description": "isometric BOM csv file"},
+    {"name": "OUT", "kind": "text", "required": false, "description": "report file to write (optional)"}
+  ],
+  "requires": [
+    {"name": "node", "min_version": "18"}
+  ]
+}

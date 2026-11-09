@@ -1,0 +1,16 @@
+{
+  "description": "Batch DWG to PDF with a Claude coworker (AutoCAD console plot)",
+  "kind": "python",
+  "run": ["python", "-m", "dwg2pdf_agent", "{FOLDER}", "--ask", "{ASK}"],
+  "env": [
+    {"name": "ANTHROPIC_API_KEY", "secret": true, "required": true, "description": "your Anthropic API key"}
+  ],
+  "args": [
+    {"name": "FOLDER", "kind": "path", "description": "folder with the DWG files"},
+    {"name": "ASK", "kind": "text", "required": false, "description": "how you want the PDFs, in words (Enter = default settings)"}
+  ],
+  "requires": [
+    {"name": "autocad", "description": "AutoCAD's console (accoreconsole.exe) does the plotting"},
+    {"name": "powershell"}
+  ]
+}

@@ -1,0 +1,6 @@
+# Nothing is required: the launcher runs on the Python standard library + git.
+# Optional extras (the launcher works without them):
+#   anthropic   - lets Claude read the agent's files for a better plan (--no-llm turns it off)
+#   keyring     - stores secrets in Windows Credential Manager / macOS Keychain
+anthropic>=0.40
+keyring>=24
